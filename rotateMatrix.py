@@ -10,3 +10,8 @@ class Solution:
         """
         left  = 0
         right = len(matrix) - 1
+        while left < right:
+            for i in range(right - left):
+                top, bottom = left, right
+                topLeft = matrix[top][left + i]
+                matrix[top][left + i] = matrix[bottom - i][left]
